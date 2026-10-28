@@ -552,3 +552,16 @@ button:disabled,.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed}
 @media(max-width:600px){.chartbox{height:28rem}}
 .discl{border:1px solid var(--l);border-left:4px solid #d97706;border-radius:12px;padding:1rem 1.2rem;background:var(--s);color:var(--t);font-size:.95rem;margin:1.5rem 0}
 .srcs{padding-left:1.1rem}.srcs li{margin:.4rem 0}
+
+/* ===== v3: headline on exactly three lines, platforms without a box ===== */
+.hero4 h1{font-size:clamp(2rem,7.2vw,5.2rem);line-height:1.04}
+.hero4 h1 span{display:block;white-space:nowrap}
+.h4txt{min-width:0}
+.pshow .ppanel{background:none;border:0;border-radius:0;box-shadow:none;min-height:0;overflow:visible;padding:0}
+.pshow .ppanel:before{display:none}
+.pshow .ppanel .pb{padding:0}
+.pshow .ppanel .pb h3{color:var(--t);font-size:1.25rem;margin:0 0 18px}
+.pshow .tile{color:var(--t);font-weight:600}
+.pshow .tile:hover{color:var(--c)}
+.pshow .ti{box-shadow:0 6px 18px #0003;border:1px solid #0001}
+.lapx{all:unset}
