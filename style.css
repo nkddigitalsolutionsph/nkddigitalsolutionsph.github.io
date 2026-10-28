@@ -483,7 +483,7 @@ html[data-theme] .btn.pu{background:var(--btn);border-color:var(--btn);color:#ff
 [data-theme=light] .btn.o:hover{background:#3b25b8;color:#fff}
 [data-theme=light] .tags,[data-theme=light] .nm{color:#4a2fd0}
 a{text-underline-offset:.18em}
-:where(main,footer,.note,.sf) a:not(.btn):not(.c4):not(.go):not(.tile):not(.mi){color:var(--c)}
+:where(main,.note,.sf) a:not(.btn):not(.c4):not(.go):not(.tile):not(.mi){color:var(--c)}
 [data-theme=dark]{--m:#b4b2c8}
 /* hero: headline then moving finance and trading stats */
 .fpanel{position:relative;width:min(100%,46rem);height:21rem;margin:.5rem auto 0;border:1px solid var(--l);border-radius:20px;overflow:hidden;box-shadow:0 18px 50px #6c47ff2e}
@@ -521,10 +521,10 @@ a{text-underline-offset:.18em}
 .mi:hover{transform:translateY(-3px)}
 /* feedback */
 #impressions h2{margin-bottom:1rem}
-.fb{margin:0;max-width:40rem;padding:1.4rem 1.5rem;border:1px solid var(--l);border-left:4px solid var(--c);border-radius:14px;background:var(--s)}
-.fb blockquote{margin:0}
-.fb blockquote p{margin:0;font:600 1.2rem/1.55 Inter,sans-serif;color:var(--t)}
-.fb figcaption{margin-top:.8rem;font:700 .95rem Inter,sans-serif;color:var(--m)}
+.fbk{margin:0;max-width:40rem;padding:1.4rem 1.5rem;border:1px solid var(--l);border-left:4px solid var(--c);border-radius:14px;background:var(--s)}
+.fbk blockquote{margin:0}
+.fbk blockquote p{margin:0;font:600 1.2rem/1.55 Inter,sans-serif;color:var(--t)}
+.fbk figcaption{margin-top:.8rem;font:700 .95rem Inter,sans-serif;color:var(--m)}
 /* every clickable thing gives feedback */
 a,button,[role=button],summary,label.ck,.c4,.tile,.mi{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 :focus-visible{outline:3px solid var(--c);outline-offset:3px;border-radius:6px}
@@ -565,3 +565,21 @@ button:disabled,.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed}
 .pshow .tile:hover{color:var(--c)}
 .pshow .ti{box-shadow:0 6px 18px #0003;border:1px solid #0001}
 .lapx{all:unset}
+
+/* ===== v4: footer readable in both modes, platform tabs fit their blocks ===== */
+html[data-theme] footer{background:#12121a;color:#e8e6f4}
+html[data-theme] footer h4,html[data-theme] footer p,html[data-theme] footer .note,html[data-theme] footer .fb,html[data-theme] footer li,html[data-theme] footer a{color:#e8e6f4;opacity:1}
+html[data-theme] footer a:hover,html[data-theme] footer a:focus-visible{color:#b9aeff}
+html[data-theme] footer .fb{border-top:1px solid #3a3a52;margin-top:28px;padding-top:18px;font-size:.88rem;line-height:1.6;background:none}
+.pshow{grid-template-columns:minmax(0,15rem) minmax(0,1fr)}
+.ptabs button,.ptabs button:hover,.ptabs button[aria-pressed=true]{transform:none}
+.ptabs button{white-space:normal;line-height:1.3;text-align:left;overflow-wrap:anywhere;width:100%}
+.pshow .ppanel,.pshow .pb{min-width:0}
+.tile span:last-child{overflow-wrap:anywhere;line-height:1.3}
+@media(max-width:760px){
+.pshow{grid-template-columns:minmax(0,1fr)}
+.ptabs{flex-direction:row;flex-wrap:wrap;overflow:visible;gap:8px}
+.ptabs button{width:auto;flex:0 1 auto;max-width:100%;padding:10px 14px}
+.tiles{grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:14px}
+.tile{width:auto;max-width:100%}
+}
