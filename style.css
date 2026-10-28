@@ -474,3 +474,81 @@ html[data-theme] .btn.pu{background:var(--btn);border-color:var(--btn);color:#ff
 .devwrap.arm .mac3 .mac,.devwrap.arm.in .mac3 .mac{transform:none!important;transition:none!important}.dev{transform:none!important}.ip-sm{animation:none!important;transform:none!important}.mac .scr .sl2{transform:none!important}
 @media(max-width:899px){.hero4{grid-template-columns:minmax(0,1fr)}.h4vis{margin-top:.5rem}}
 @media(prefers-reduced-motion:reduce){.stat3d,.stat3d .sl,.stat3d .mag,.stat3d .bars rect{animation:none}}
+
+/* ===== v2 patch: finance hero, platforms board, feedback, contrast, interaction states ===== */
+/* contrast: readable accents and text in light mode */
+[data-theme=light]{--c:#4a2fd0;--v:#5b3fe0;--i:#4b3fd1;--g:#0f7a55;--m:#45425c;--ga:#4338ca;--gb:#a21caf;--l:#b9b3d8}
+[data-theme=light] .hvc button:hover{color:#fff}
+[data-theme=light] .btn.o{background:#fff;color:#3b25b8;border-color:#3b25b8}
+[data-theme=light] .btn.o:hover{background:#3b25b8;color:#fff}
+[data-theme=light] .tags,[data-theme=light] .nm{color:#4a2fd0}
+a{text-underline-offset:.18em}
+:where(main,footer,.note,.sf) a:not(.btn):not(.c4):not(.go):not(.tile):not(.mi){color:var(--c)}
+[data-theme=dark]{--m:#b4b2c8}
+/* hero: headline then moving finance and trading stats */
+.fpanel{position:relative;width:min(100%,46rem);height:21rem;margin:.5rem auto 0;border:1px solid var(--l);border-radius:20px;overflow:hidden;box-shadow:0 18px 50px #6c47ff2e}
+.fpanel .scr{border-radius:0}
+.fpanel .scr .sl2{padding:18px 22px 40px}
+.fpanel .sl2 h3{font-size:1.1rem}
+.fpanel .sl2 p{font-size:.95rem;color:var(--m)}
+.fpanel .sf{font-size:.85rem;flex-wrap:wrap}
+.fpanel .scr .br{grid-template-columns:96px 1fr 84px;font-size:.92rem;gap:10px;margin:9px 0}
+.fpanel .scr .br i{height:12px}
+.fpanel .scr .dn2{width:132px}
+.fpanel .scr .dn2 span{font-size:1.9rem}
+.fpanel .scr .hvc{bottom:10px}
+.fpanel .scr .hvc i{width:9px;height:9px}
+.fpanel .scr .hvc i.on{width:26px}
+.hero4{padding-bottom:.5rem}
+@media(max-width:560px){.fpanel{height:23rem}.fpanel .scr .br{grid-template-columns:78px 1fr 70px;font-size:.82rem}}
+.tape{margin:.4rem 0 1.4rem}
+.tvw{min-height:46px}
+.tvw iframe{max-width:100%}
+.tvn{font-size:.78rem;margin:.3rem 0 0;text-align:center}
+/* platforms: no device frame, tabs plus tool tiles */
+#platforms{padding-top:1.2rem}
+.pshow{align-items:stretch}
+.pshow .ppanel{height:100%;min-height:16rem;border:1px solid #6c47ff99;border-radius:20px;padding:0}
+.ppanel .pb{padding:22px}
+.ppanel .pb h3{color:#fff;font-size:1.15rem;margin:0 0 18px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:18px;justify-items:center}
+.ptabs button{min-height:44px;font:600 .95rem Inter,sans-serif}
+.ptabs button:hover{border-color:var(--c);transform:translateX(3px)}
+.ptabs{scroll-snap-type:x proximity;scrollbar-width:thin}
+.ptabs button{scroll-snap-align:center}
+.mqr:hover>div,.mqr:focus-within>div{animation-play-state:paused}
+.mi{box-shadow:0 0 0 1px #0002}
+.mi:hover{transform:translateY(-3px)}
+/* feedback */
+#impressions h2{margin-bottom:1rem}
+.fb{margin:0;max-width:40rem;padding:1.4rem 1.5rem;border:1px solid var(--l);border-left:4px solid var(--c);border-radius:14px;background:var(--s)}
+.fb blockquote{margin:0}
+.fb blockquote p{margin:0;font:600 1.2rem/1.55 Inter,sans-serif;color:var(--t)}
+.fb figcaption{margin-top:.8rem;font:700 .95rem Inter,sans-serif;color:var(--m)}
+/* every clickable thing gives feedback */
+a,button,[role=button],summary,label.ck,.c4,.tile,.mi{cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px;border-radius:6px}
+.btn:active,.hvc button:active,.ptabs button:active,.c4:active,.tlist a:active,.tile:active{transform:scale(.97)}
+.c4:hover,.tlist a:hover,.go:hover{border-color:var(--c)}
+.tlist a,.c4{min-height:44px}
+.hvc i,#hd i{min-width:10px}
+.hvc button,#hp,#hn{min-width:44px;min-height:44px}
+button:disabled,.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed}
+@media(prefers-reduced-motion:reduce){.tile,.mqr>div,.ppanel:before{animation:none}.mqr{overflow-x:auto}.sl2,.sl2 .br i{transition:none}}
+/* finance page */
+.fin-h{padding:clamp(1.5rem,5vw,3rem) 0 .5rem}
+.fin-h h1{font:800 clamp(2.2rem,6vw,4rem)/1.05 Inter,sans-serif;letter-spacing:-.035em;margin:.3rem 0 1rem}
+.fin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px;margin-top:1.2rem}
+.fstat{background:var(--s);border:1px solid var(--l);border-radius:16px;padding:1.2rem}
+.fstat b{display:block;font:800 clamp(2rem,5vw,2.8rem)/1 Inter,sans-serif;color:var(--t);letter-spacing:-.03em}
+.fstat span{display:block;margin:.5rem 0;color:var(--m);font-size:.95rem}
+.fstat small{font-size:.82rem;color:var(--m)}
+.fstat.warn{border-color:#d97706}
+.fstat.warn b{color:#b45309}
+[data-theme=dark] .fstat.warn b{color:#fbbf24}
+.chartbox{height:34rem;border:1px solid var(--l);border-radius:16px;overflow:hidden;background:var(--s);margin-top:1rem}
+.chartbox.sm{height:26rem}
+.chartbox .tradingview-widget-container__widget,.chartbox>div{height:100%}
+@media(max-width:600px){.chartbox{height:28rem}}
+.discl{border:1px solid var(--l);border-left:4px solid #d97706;border-radius:12px;padding:1rem 1.2rem;background:var(--s);color:var(--t);font-size:.95rem;margin:1.5rem 0}
+.srcs{padding-left:1.1rem}.srcs li{margin:.4rem 0}
