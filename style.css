@@ -583,3 +583,39 @@ html[data-theme] footer .fb{border-top:1px solid #3a3a52;margin-top:28px;padding
 .tiles{grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:14px}
 .tile{width:auto;max-width:100%}
 }
+
+/* ===== v5: hero never overlaps, mobile menu sits on top and fits, inner-page titles ===== */
+body{overflow-x:clip}
+h1,h2,h3{overflow-wrap:break-word}
+[id]{scroll-margin-top:calc(var(--hh,66px) + 12px)}
+html[data-theme] header{z-index:100}
+#bot{z-index:40}
+/* hero headline is sized from its own column, so it can never run under the stats panel */
+.hero4>*{min-width:0}
+.h4txt{container-type:inline-size}
+html[data-theme] .hero4 h1{font-size:clamp(2rem,6.4vw,5.6rem);line-height:1.04}
+@supports (font-size:1cqw){html[data-theme] .hero4 h1{font-size:clamp(2rem,11.2cqw,5.6rem)}}
+html[data-theme] .hero4 h1 span{display:block;white-space:nowrap}
+@media(min-width:900px){.hero4{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}.h4vis{align-self:center;min-width:0}}
+.fpanel{width:100%;max-width:100%}
+.fcta{display:flex;flex-wrap:wrap;gap:12px}
+.fcta .btn{max-width:100%;white-space:normal;text-align:center}
+/* inner page titles */
+html[data-theme] .hero h1{line-height:1.06;margin-bottom:1rem}
+.hero .nm{display:block;margin-bottom:.6rem}
+[data-theme=dark] .hero .nm{color:#b9aeff}
+@media(max-width:640px){.hero{padding:36px 0 32px}.hero .avatar{margin-top:1rem}}
+/* mobile menu: full-screen panel above everything, readable in both themes */
+@media(max-width:900px){
+html[data-theme=dark] nav{background:#07070d}
+html[data-theme=light] nav{background:#f7f6fb}
+html[data-theme] nav{position:fixed;top:var(--hh,66px);left:0;right:0;bottom:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;padding:.5rem 1.2rem 6rem;z-index:99;margin:0}
+html[data-theme] nav.o{display:flex;flex-direction:column;align-items:stretch}
+html[data-theme] nav>a.nl,html[data-theme] .dt{min-height:52px;width:100%;justify-content:space-between;color:var(--t);background:none;border:0;border-bottom:1px solid var(--l);border-radius:0;font-size:1.05rem;text-align:left}
+html[data-theme] .dd .dm{position:static;display:none;box-shadow:none;border:0;background:none;padding:0 0 .6rem .6rem;min-width:0}
+html[data-theme] .dd.open .dm{display:block}
+html[data-theme] .dm a{min-height:48px;padding:.6rem .4rem;color:var(--t)}
+html[data-theme] nav .mcta{display:flex;align-items:center;justify-content:center;min-height:50px;margin:16px 0 0;border:0;border-radius:999px;background:#4a2fd0;color:#fff;font-weight:700;text-decoration:none}
+body:has(nav.o){overflow:hidden}
+body:has(nav.o) #bot{display:none}
+}
