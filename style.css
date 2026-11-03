@@ -605,21 +605,6 @@ html[data-theme] .hero h1{line-height:1.06;margin-bottom:1rem}
 .hero .nm{display:block;margin-bottom:.6rem}
 [data-theme=dark] .hero .nm{color:#b9aeff}
 @media(max-width:640px){.hero{padding:36px 0 32px}.hero .avatar{margin-top:1rem}}
-/* mobile menu: full-screen panel above everything, readable in both themes */
-@media(max-width:900px){
-html[data-theme=dark] nav{background:#07070d}
-html[data-theme=light] nav{background:#f7f6fb}
-html[data-theme] nav{position:fixed;top:var(--hh,66px);left:0;right:0;bottom:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;padding:.5rem 1.2rem 6rem;z-index:99;margin:0}
-html[data-theme] nav.o{display:flex;flex-direction:column;align-items:stretch}
-html[data-theme] nav>a.nl,html[data-theme] .dt{min-height:52px;width:100%;justify-content:space-between;color:var(--t);background:none;border:0;border-bottom:1px solid var(--l);border-radius:0;font-size:1.05rem;text-align:left}
-html[data-theme] .dd .dm{position:static;display:none;box-shadow:none;border:0;background:none;padding:0 0 .6rem .6rem;min-width:0}
-html[data-theme] .dd.open .dm{display:block}
-html[data-theme] .dm a{min-height:48px;padding:.6rem .4rem;color:var(--t)}
-html[data-theme] nav .mcta{display:flex;align-items:center;justify-content:center;min-height:50px;margin:16px 0 0;border:0;border-radius:999px;background:#4a2fd0;color:#fff;font-weight:700;text-decoration:none}
-body:has(nav.o){overflow:hidden}
-body:has(nav.o) #bot{display:none}
-}
-
 /* ===== v6: navigation rebuilt on its own class names; fail-safe content; skip link ===== */
 .skip{position:absolute;left:-9999px;top:8px;z-index:200;background:#4a2fd0;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
 .skip:focus{left:8px}
@@ -697,3 +682,14 @@ body:has(#nv.o) #bot{display:none}
 .fstat{background:#7233d0;border:0;color:#fff}
 .fstat b,.fstat span,.fstat small,.fstat.warn b{color:#fff}
 .fstat.warn{background:#92400e}
+
+/* ===== v8: breadcrumb and route bar are normal rows on every screen ===== */
+.route{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:12px clamp(1rem,4vw,2rem);max-width:72rem;margin:0 auto;position:static}
+.crumb{flex:1 1 auto;min-width:0;font-size:.9rem}
+html[data-theme] .jr{display:flex;flex:0 1 auto;gap:6px;max-width:100%;overflow-x:auto;position:static;background:none;border:0;padding:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+html[data-theme] .jr::-webkit-scrollbar{display:none}
+html[data-theme] .jr a{flex:0 0 auto;display:inline-flex;align-items:center;gap:.4rem;width:auto;min-height:40px;padding:0 .8rem;border:1px solid var(--l);border-radius:8px;white-space:nowrap;font-size:.92rem;text-decoration:none;color:var(--m);background:none}
+html[data-theme] .jr a span{display:inline}
+html[data-theme] .jr a.on{background:var(--t);color:var(--bg);border-color:var(--t)}
+html[data-theme] .jr a.done{color:var(--t)}
+@media(max-width:640px){.route{padding:10px 1rem}.crumb{flex-basis:100%;font-size:.85rem}html[data-theme] .jr{width:100%}}
