@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NKD Digital Solutions | Human-Verified SEO &amp; Web Architecture</title>
+<meta name="description" content="Research-first SEO, human-verified content, and conversion-focused web design. Get a custom video audit of your website.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236D28D9'/%3E%3Cpath d='M8 23V9h3l10 10V9h3v14h-3L11 13v10z' fill='white'/%3E%3C/svg%3E">
+<script>
+/* Set theme before paint to avoid a flash */
+(function(){var t;try{t=localStorage.getItem("nkd-theme")}catch(e){}
+if(!t){t=window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
+document.documentElement.setAttribute("data-theme",t)})();
+</script>
+<style>
+:root{
+  --bg:#FFFFFF;--card:#F8F7FC;--text:#0A0A0C;--text2:#27272A;
+  --border:rgba(39,39,42,.22);--ink:#6D28D9;--tint:rgba(109,40,217,.10);
+  --grad:linear-gradient(135deg,#5B21B6 0%,#7C3AED 52%,#6D28D9 100%);
+  --on-accent:#FFFFFF;--glow:rgba(109,40,217,.28);--nav:rgba(255,255,255,.88);
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --serif:Georgia,"Times New Roman",serif;
+}
+[data-theme="dark"]{
+  --bg:#09090B;--card:#121216;--text:#FFFFFF;--text2:#E4E4E7;
+  --border:rgba(168,85,247,.25);--ink:#C084FC;--tint:rgba(168,85,247,.14);
+  --grad:linear-gradient(135deg,#C084FC 0%,#A855F7 100%);
+  --on-accent:#09090B;--glow:rgba(168,85,247,.38);--nav:rgba(9,9,11,.88);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text2);font:17px/1.65 var(--font);overflow-x:hidden;
+  transition:background .3s,color .3s}
+h1,h2,h3{color:var(--text);margin:0;line-height:1.12;letter-spacing:-.02em}
+h1,h2{font-family:var(--serif);font-weight:700}
+p{margin:0}a{color:inherit}
+img,svg{max-width:100%}
+section[id],footer[id]{scroll-margin-top:84px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--text);color:var(--bg);padding:10px 14px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;
+  border-radius:12px;border:2px solid transparent;font:700 16px/1.2 var(--font);text-decoration:none;cursor:pointer;
+  transition:transform .15s,box-shadow .2s,background-position .4s,background .2s,color .2s;text-align:center}
+.btn-primary{background:var(--grad);background-size:160% 160%;color:var(--on-accent);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 6px 18px var(--glow)}
+.btn-primary:hover{background-position:100% 100%;transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 10px 26px var(--glow)}
+.btn-primary:active{transform:translateY(0)}
+.btn-outline{background:transparent;color:var(--text);border-color:var(--text)}
+.btn-outline:hover{background:var(--text);color:var(--bg)}
+.btn-outline:active{transform:scale(.98)}
+.btn-sm{min-height:44px;padding:9px 16px;font-size:15px}
+
+/* Nav */
+header{position:sticky;top:0;z-index:50;background:var(--nav);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:-.01em;min-height:44px}
+.brand svg{width:30px;height:30px;color:var(--ink);flex:none}
+.links{display:none;gap:4px}
+.links a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:10px;text-decoration:none;
+  font-weight:600;font-size:15px;color:var(--text2)}
+.links a:hover{background:var(--tint);color:var(--text)}
+.actions{display:flex;align-items:center;gap:10px}
+.actions .cta-nav{display:none}
+.toggle{position:relative;width:64px;min-height:44px;height:44px;border-radius:999px;border:1.5px solid var(--border);
+  background:var(--card);cursor:pointer;padding:0;flex:none}
+.toggle .knob{position:absolute;top:5px;left:5px;width:32px;height:32px;border-radius:50%;background:var(--grad);
+  display:grid;place-items:center;color:var(--on-accent);transition:transform .3s}
+[data-theme="dark"] .toggle .knob{transform:translateX(20px)}
+.toggle svg{width:18px;height:18px}
+.toggle .sun{display:block}.toggle .moon{display:none}
+[data-theme="dark"] .toggle .sun{display:none}[data-theme="dark"] .toggle .moon{display:block}
+.burger{width:44px;height:44px;border-radius:10px;border:1.5px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;display:grid;place-items:center;padding:0}
+.burger svg{width:22px;height:22px}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(86vw,360px);background:var(--bg);border-left:1px solid var(--border);
+  z-index:60;transform:translateX(100%);transition:transform .3s;padding:20px;display:flex;flex-direction:column;gap:6px;overflow-y:auto;visibility:hidden}
+.drawer.open{transform:none;visibility:visible}
+.drawer .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.drawer a.l{display:flex;align-items:center;min-height:48px;padding:0 12px;border-radius:10px;text-decoration:none;font-weight:700;color:var(--text)}
+.drawer a.l:hover{background:var(--tint)}
+.drawer .btn{margin-top:12px;width:100%}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:55;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.open{opacity:1;pointer-events:auto}
+
+/* Hero */
+.hero{padding:44px 0 56px}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.badge{display:inline-block;padding:8px 14px;border-radius:999px;background:var(--tint);color:var(--ink);
+  border:1px solid var(--border);font-size:12px;font-weight:800;letter-spacing:.08em;line-height:1.4;margin-bottom:20px}
+h1{font-size:clamp(34px,7vw,64px)}
+.lead{margin:20px 0 28px;font-size:clamp(17px,2.2vw,20px);max-width:620px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.score{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px;
+  box-shadow:0 24px 60px -24px var(--glow)}
+.score-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:18px;
+  padding-bottom:14px;border-bottom:1px solid var(--border)}
+.score-head strong{color:var(--text);font-size:16px}
+.dots{display:flex;gap:6px}.dots i{width:10px;height:10px;border-radius:50%;background:var(--border)}
+.row{display:flex;align-items:center;gap:12px;padding:12px 0}
+.row+.row{border-top:1px solid var(--border)}
+.tick{width:30px;height:30px;border-radius:50%;background:var(--grad);color:var(--on-accent);display:grid;place-items:center;flex:none}
+.tick svg{width:16px;height:16px}
+.row .t{flex:1;min-width:0;color:var(--text);font-weight:700;font-size:15px}
+.row .v{font-weight:800;color:var(--ink);font-size:15px;white-space:nowrap}
+.bar{height:8px;border-radius:99px;background:var(--border);overflow:hidden;margin-top:6px}
+.bar b{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width 1.2s .3s}
+.reveal .bar b{width:var(--w)}
+
+/* Trust */
+.trust{border-block:1px solid var(--border);background:var(--card);padding:28px 0}
+.trust p{text-align:center;font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--text2);margin-bottom:18px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 36px;color:var(--text);font-size:19px}
+.logos span{opacity:.9;white-space:nowrap}
+
+/* Sections */
+.sec{padding:72px 0}
+.eyebrow{color:var(--ink);font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(28px,4.6vw,44px)}
+.sec-head{max-width:760px;margin-bottom:36px}
+.sec-head p{margin-top:14px}
+.stat{display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:var(--tint);border:1px solid var(--border);
+  border-radius:16px;padding:18px 20px;margin-bottom:24px}
+.stat b{font:800 clamp(40px,7vw,56px)/1 var(--font);background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:var(--ink)}
+.stat span{flex:1 1 240px;color:var(--text)}
+.stat small{display:block;color:var(--text2);margin-top:4px;font-size:13px}
+.cmp{display:grid;gap:20px}
+.panel{border:1px solid var(--border);border-radius:20px;padding:26px;background:var(--card)}
+.panel.win{border:2px solid var(--ink);background:var(--bg);box-shadow:0 18px 48px -22px var(--glow)}
+.panel h3{font-size:21px;margin-bottom:16px}
+.panel ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.panel li{display:flex;gap:12px;align-items:flex-start}
+.ic{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;margin-top:2px}
+.ic svg{width:14px;height:14px}
+.no .ic{border:2px solid var(--text2);color:var(--text2)}
+.win .ic{background:var(--grad);color:var(--on-accent)}
+.grid3{display:grid;gap:20px}
+.card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;
+  text-decoration:none;color:var(--text2);transition:transform .2s,box-shadow .25s,border-color .25s;text-align:left;font:inherit;cursor:pointer;width:100%}
+.card:hover{transform:translateY(-4px);border-color:var(--ink);box-shadow:0 0 0 1px var(--ink),0 16px 40px -12px var(--glow)}
+.card:active{transform:translateY(-1px)}
+.card .num{width:48px;height:48px;border-radius:14px;background:var(--grad);color:var(--on-accent);display:grid;place-items:center;
+  margin-bottom:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.card .num svg{width:24px;height:24px}
+.card h3{font-size:22px;margin-bottom:10px}
+.card .more{margin-top:auto;padding-top:18px;font-weight:800;color:var(--ink);display:flex;align-items:center;gap:6px;min-height:44px}
+.founder{display:grid;gap:32px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:24px;padding:clamp(24px,5vw,48px)}
+.portrait{width:clamp(160px,30vw,230px);aspect-ratio:1;border-radius:50%;padding:6px;background:var(--grad);justify-self:center;
+  box-shadow:0 18px 50px -14px var(--glow)}
+.portrait div{width:100%;height:100%;border-radius:50%;background:var(--bg);display:grid;place-items:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait span{font:700 clamp(40px,8vw,64px)/1 var(--serif);color:var(--ink)}
+blockquote{margin:0 0 20px;font:italic 500 clamp(20px,3vw,27px)/1.4 var(--serif);color:var(--text)}
+.who{color:var(--text);font-weight:800}.who small{display:block;font-weight:500;color:var(--text2);font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:6px 14px;border-radius:999px;background:var(--tint);
+  border:1px solid var(--border);color:var(--text);font-weight:700;font-size:14px}
+.chip svg{width:16px;height:16px;color:var(--ink)}
+.steps{display:grid;gap:20px;counter-reset:s;position:relative}
+.step{display:flex;gap:18px;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:20px}
+.step .n{width:52px;height:52px;border-radius:50%;background:var(--grad);color:var(--on-accent);font:800 18px var(--font);
+  display:grid;place-items:center;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
+.step h3{font-size:21px;margin-bottom:6px}
+.price{display:inline-block;margin-top:10px;padding:4px 12px;border-radius:999px;background:var(--tint);color:var(--ink);font-weight:800;font-size:14px;border:1px solid var(--border)}
+.lab .tag{display:inline-block;align-self:flex-start;margin-bottom:14px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);
+  color:var(--ink);background:var(--tint);font-size:12px;font-weight:800;letter-spacing:.06em}
+.banner{margin:0 auto;border:2px solid var(--ink);border-radius:28px;padding:clamp(32px,6vw,64px);text-align:center;
+  background:var(--card);box-shadow:0 24px 70px -26px var(--glow)}
+.banner h2{max-width:720px;margin:0 auto 14px}.banner p{max-width:560px;margin:0 auto 26px}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:52px 0 28px;margin-top:72px;background:var(--card)}
+.fgrid{display:grid;gap:32px;grid-template-columns:1fr}
+footer h4{margin:0 0 12px;color:var(--text);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+footer ul{list-style:none;margin:0;padding:0}
+footer li a{display:inline-flex;align-items:center;min-height:36px;text-decoration:none}
+footer li a:hover{color:var(--ink);text-decoration:underline}
+select{min-height:44px;padding:8px 12px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);color:var(--text);font:inherit;max-width:100%}
+.fine{margin-top:36px;padding-top:20px;border-top:1px solid var(--border);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+/* Modal */
+dialog{border:1px solid var(--border);border-radius:22px;padding:0;background:var(--bg);color:var(--text2);width:min(94vw,520px);max-height:92vh;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+.dlg{padding:clamp(22px,5vw,34px);position:relative}
+.dlg h2{font-size:28px;margin-bottom:8px;padding-right:44px}
+.x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-size:22px;line-height:1}
+.field{margin-top:16px}
+label{display:block;font-weight:700;color:var(--text);margin-bottom:6px;font-size:15px}
+input,select.f{width:100%;min-height:48px;padding:10px 14px;border-radius:12px;border:1.5px solid var(--border);background:var(--card);color:var(--text);font:inherit}
+input:focus,select.f:focus{border-color:var(--ink)}
+.err{display:none;color:var(--text);font-size:14px;margin-top:6px;font-weight:600}
+.field.bad input,.field.bad select{border-color:var(--ink);border-width:2px}
+.field.bad .err{display:flex;gap:6px;align-items:center}
+.field.bad .err::before{content:"!";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--grad);color:var(--on-accent);font-size:12px;font-weight:800;flex:none}
+.dlg .btn{width:100%;margin-top:22px}
+.ok{text-align:center;padding:12px 0}.ok .tick{width:64px;height:64px;margin:0 auto 18px}.ok .tick svg{width:30px;height:30px}
+.hp{position:absolute;left:-9999px}
+
+/* Aesthetic layer */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(80px);pointer-events:none}
+.hero::before{width:480px;height:480px;right:-140px;top:-140px;background:var(--grad);opacity:.2;animation:drift 14s ease-in-out infinite alternate}
+.hero::after{width:380px;height:380px;left:-160px;bottom:-160px;background:var(--grad);opacity:.12;animation:drift 18s ease-in-out infinite alternate-reverse}
+[data-theme="dark"] .hero::before{opacity:.32}[data-theme="dark"] .hero::after{opacity:.2}
+@keyframes drift{to{transform:translate(-50px,36px) scale(1.14)}}
+.score{border:1.5px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,var(--grad) border-box}
+.score.reveal{animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.btn-primary{position:relative;overflow:hidden}
+.btn-primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.42) 50%,transparent 65%);transform:translateX(-120%);animation:sheen 5.5s infinite;pointer-events:none}
+@keyframes sheen{55%,100%{transform:translateX(120%)}}
+.sec-head h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:var(--grad);margin-top:16px}
+.banner h2::after{margin-left:auto;margin-right:auto}
+
+/* Ticker */
+.ticker{border-bottom:1px solid var(--border);background:var(--bg);padding:6px 0}
+.ticker .wrap{display:flex;align-items:center;gap:12px}
+.tview{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.track{display:flex;gap:56px;width:max-content;padding:10px 0;animation:slide 70s linear infinite}
+.ticker:hover .track,.ticker.paused .track{animation-play-state:paused}
+.track span{display:flex;align-items:center;gap:10px;white-space:nowrap;font-size:14px;color:var(--text2)}
+.track b{color:var(--text);font-size:16px}
+.track i{width:7px;height:7px;border-radius:50%;background:var(--grad);flex:none}
+.track em{font-style:normal;color:var(--ink);font-weight:700}
+@keyframes slide{to{transform:translateX(-50%)}}
+.tpause{min-height:44px;min-width:76px;padding:0 14px;border-radius:999px;border:1.5px solid var(--border);background:var(--card);color:var(--text);font:700 13px var(--font);cursor:pointer;flex:none}
+.tpause:hover{border-color:var(--ink)}
+
+/* Data cards */
+.dgrid{display:grid;gap:20px}
+.dcard{display:flex;flex-direction:column;gap:12px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:24px;min-width:0}
+.dcard h3{font-size:19px;line-height:1.25}
+.dcard .big{font:800 clamp(38px,6vw,50px)/1 var(--font);color:var(--text);letter-spacing:-.03em}
+.dcard .big em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:var(--ink)}
+.dcard .take{padding:12px 14px;border-radius:12px;background:var(--tint);border:1px solid var(--border);color:var(--text);font-size:15px}
+.dcard .src{margin-top:auto;font-size:12.5px;line-height:1.5}
+.dcard .src a{color:var(--ink);font-weight:700}
+.dcard svg{width:100%;height:auto;display:block}
+.ln{stroke-dashoffset:1;stroke-dasharray:1;transition:stroke-dashoffset 1.8s cubic-bezier(.3,.7,.2,1) .2s}
+.reveal .ln{stroke-dashoffset:0}
+.pt{opacity:0;transition:opacity .4s}.reveal .pt{opacity:1}
+.reveal .pt:nth-of-type(1){transition-delay:.4s}.reveal .pt:nth-of-type(2){transition-delay:.9s}.reveal .pt:nth-of-type(3){transition-delay:1.4s}.reveal .pt:nth-of-type(4){transition-delay:1.9s}
+.hb{margin:4px 0}
+.hl{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px;color:var(--text);font-weight:600;margin-bottom:6px}
+.hl b{font-variant-numeric:tabular-nums;font-size:17px}
+.tr2{height:14px;border-radius:99px;background:var(--border);overflow:hidden}
+.tr2 i{display:block;height:100%;width:0;border-radius:99px;background:var(--grad);transition:width 1.4s cubic-bezier(.2,.8,.2,1) .2s}
+.tr2.dim i{background:var(--text2);opacity:.55}
+.reveal .tr2 i{width:var(--w)}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.mini div{padding:10px 12px;border-radius:12px;border:1px solid var(--border);font-size:13px;line-height:1.4}
+.mini b{display:block;color:var(--text);font-size:20px}
+.note2{font-size:12.5px}
+@media (min-width:900px){.dgrid{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){.track,.btn-primary::after,.hero::before,.hero::after,.score.reveal{animation:none!important}.ln{stroke-dashoffset:0}.pt{opacity:1}.tr2 i{width:var(--w)}}
+
+/* Reveal */
+.fade{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.fade.reveal{opacity:1;transform:none}
+
+@media (min-width:640px){.grid3{grid-template-columns:repeat(2,1fr)}.fgrid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:900px){
+  .links{display:flex}.burger{display:none}.actions .cta-nav{display:inline-flex}
+  .hero{padding:72px 0 80px}.hero-grid{grid-template-columns:1.08fr .92fr}
+  .cmp{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:repeat(3,1fr)}
+  .founder{grid-template-columns:auto 1fr}
+  .steps{grid-template-columns:repeat(3,1fr)}.step{flex-direction:column}
+  .fgrid{grid-template-columns:1.4fr 1fr 1fr 1fr}
+}
+@media (max-width:360px){.btn{width:100%}.badge{font-size:11px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.fade{opacity:1;transform:none}.bar b{width:var(--w)}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="NKD Digital Solutions home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 23V9h3l10 10V9h3v14h-3L11 13v10z" fill="var(--bg)"/></svg>
+      <span>NKD Digital Solutions</span>
+    </a>
+    <nav class="links" aria-label="Primary">
+      <a href="#services">Services</a><a href="#process">Process</a><a href="#tools">Free Tools</a>
+      <a href="/finance/">Finance Hub</a><a href="#about">About</a>
+    </nav>
+    <div class="actions">
+      <button class="toggle" id="themeToggle" role="switch" aria-checked="false" aria-label="Dark mode">
+        <span class="knob">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </span>
+      </button>
+      <button class="btn btn-primary btn-sm cta-nav" data-audit>Get Free Video Audit</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Menu">
+  <div class="top"><strong style="color:var(--text)">Menu</strong>
+    <button class="x" style="position:static" id="closeDrawer" aria-label="Close menu">&times;</button></div>
+  <a class="l" href="#services">Services</a><a class="l" href="#process">Process</a><a class="l" href="#tools">Free Tools</a>
+  <a class="l" href="/finance/">Finance Hub</a><a class="l" href="#about">About</a>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:12px;color:var(--text);font-weight:700">
+    <span>Dark mode</span>
+    <button class="toggle" id="themeToggle2" role="switch" aria-checked="false" aria-label="Dark mode">
+      <span class="knob"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span>
+    </button>
+  </div>
+  <button class="btn btn-primary" data-audit>Get Free Video Audit</button>
+</aside>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">RESEARCH-FIRST SEO • HUMAN-VERIFIED CONTENT • WEB ARCHITECTURE</span>
+      <h1>AI writes fast. Humans make it rank&mdash;and convert.</h1>
+      <p class="lead">Most agencies flood your site with unverified AI content that search engines filter out and buyers distrust. We combine data-backed SEO, strict fact-checking, and conversion-focused web design to turn your website into a dependable growth asset.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" data-audit>Get a Custom Video Audit</button>
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+      </div>
+    </div>
+    <div class="score fade" aria-label="Sample Human-Verified SEO Audit scorecard">
+      <div class="score-head"><strong>Human-Verified SEO Audit</strong><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+      <div class="row"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <div class="t">Technical Health<div class="bar"><b style="--w:98%"></b></div></div><span class="v">98%</span></div>
+      <div class="row"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <div class="t">Fact-Checked Citations</div><span class="v">Verified</span></div>
+      <div class="row"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+        <div class="t">Conversion Clarity</div><span class="v">High</span></div>
+      <p style="font-size:13px;margin-top:12px">Illustrative sample scorecard.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ticker" id="ticker" aria-label="Industry statistics from cited studies">
+  <div class="wrap"><div class="tview"><div class="track" id="track"><span><i></i><b>89%</b> of organizations regularly use AI in at least one function <em>McKinsey, 2026</em></span><span><i></i><b>8% vs 15%</b> of visits clicked a search result with vs without a Google AI summary <em>Pew Research, 2025</em></span><span><i></i><b>+8.4%</b> retail conversions from a 0.1s faster mobile site <em>Deloitte &amp; Google</em></span><span><i></i><b>1%</b> of visits clicked a link inside the AI summary itself <em>Pew Research, 2025</em></span><span><i></i><b>18%</b> of Google searches in the study showed an AI summary <em>Pew Research, March 2025</em></span><span><i></i><b>+21.6%</b> lead-form progression after a 0.1s speed gain <em>Deloitte &amp; Google</em></span></div></div>
+  <button class="tpause" id="tpause" type="button" aria-pressed="false">Pause</button></div>
+</section>
+
+<section class="trust" aria-label="Brands supported">
+  <div class="wrap">
+    <p>EXPERIENCE SUPPORTING 50+ BRANDS INCLUDING:</p>
+    <div class="logos">
+      <span style="font-weight:800;letter-spacing:-.02em">Blueberry Markets</span>
+      <span style="font:italic 700 20px var(--serif)">FXPrimus</span>
+      <span style="font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:16px">Avalon King</span>
+      <span style="font-weight:300;font-size:22px">Aura <b style="font-weight:800">Health</b></span>
+      <span style="font:800 20px var(--font);letter-spacing:.02em">123Presets</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <div class="eyebrow">The problem</div>
+      <h2>Why &ldquo;Good Enough&rdquo; Content No Longer Works</h2>
+    </div>
+    <div class="stat fade"><b data-count="89" data-suffix="%">89%</b>
+      <span>of organizations now regularly use AI in at least one business function, up from 55% in 2023. When everyone can generate copy, accuracy and expertise are what set you apart.
+        <small>Source: McKinsey &amp; Company, <a href="https://www.mckinsey.com/the-state-of-ai" rel="noopener">The state of AI in 2026</a> (survey of 1,719 respondents, May&ndash;June 2026).</small></span></div>
+    <div class="cmp">
+      <div class="panel no fade"><h3>Typical AI-Spam Agencies</h3>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Publish unreviewed AI drafts at volume</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Claims with no sources or fact-checking</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Keyword stuffing instead of search intent</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>Vague reports full of jargon</li>
+        </ul></div>
+      <div class="panel win fade"><h3>NKD Digital Solutions</h3>
+        <ul>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Every page researched, written, and reviewed by a human</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Strict fact-checking with cited sources</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Content built around what buyers actually search for</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Plain-language reporting you can act on</li>
+        </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="data" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head fade"><div class="eyebrow">Evidence</div><h2>The data behind the shift</h2>
+      <p>Three published studies that explain why verified content, AI-search visibility, and site speed now decide who wins online.</p></div>
+    <div class="dgrid">
+
+      <article class="dcard fade">
+        <h3>AI is everywhere, so generic content isn&rsquo;t an edge</h3>
+        <div class="big"><em data-count="89" data-suffix="%">89%</em></div>
+        <svg viewBox="0 0 320 196" role="img" aria-label="Line chart of the share of organizations regularly using AI in at least one business function: 55% in 2023, 78% in 2024, 88% in 2025, 89% in 2026.">
+          <g stroke="var(--border)" stroke-width="1"><line x1="36" y1="30" x2="304" y2="30"/><line x1="36" y1="95" x2="304" y2="95"/><line x1="36" y1="160" x2="304" y2="160"/></g>
+          <g font-size="11" fill="var(--text2)" text-anchor="end"><text x="30" y="34">100%</text><text x="30" y="99">50%</text><text x="30" y="164">0%</text></g>
+          <path d="M36 160 L36 88.5 L124 58.6 L212 45.6 L300 44.3 L300 160Z" fill="var(--tint)"/>
+          <path class="ln" pathLength="1" d="M36 88.5 L124 58.6 L212 45.6 L300 44.3" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <g font-size="12" font-weight="700" fill="var(--text)" text-anchor="middle">
+            <g class="pt"><circle cx="36" cy="88.5" r="5" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><text x="40" y="76">55%</text></g>
+            <g class="pt"><circle cx="124" cy="58.6" r="5" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><text x="124" y="46">78%</text></g>
+            <g class="pt"><circle cx="212" cy="45.6" r="5" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><text x="212" y="66">88%</text></g>
+            <g class="pt"><circle cx="300" cy="44.3" r="5" fill="var(--bg)" stroke="var(--ink)" stroke-width="3"/><text x="296" y="66">89%</text></g>
+          </g>
+          <g font-size="12" fill="var(--text2)" text-anchor="middle"><text x="36" y="182">2023</text><text x="124" y="182">2024</text><text x="212" y="182">2025</text><text x="300" y="182">2026</text></g>
+        </svg>
+        <p class="take"><strong>Our take:</strong> when nearly every team can publish AI drafts, trust comes from checked facts and real expertise.</p>
+        <p class="src">Share of respondents whose organizations regularly use AI in at least one business function. Source: <a href="https://www.mckinsey.com/the-state-of-ai" rel="noopener">McKinsey Global Survey on the state of AI</a>. The survey&rsquo;s AI-use definition has changed over the years.</p>
+      </article>
+
+      <article class="dcard fade">
+        <h3>AI summaries change what searchers click</h3>
+        <div class="big"><em>15%</em> &rarr; <em>8%</em></div>
+        <div>
+          <div class="hb"><div class="hl"><span>Search page without an AI summary</span><b data-count="15" data-suffix="%">15%</b></div><div class="tr2"><i style="--w:75%"></i></div></div>
+          <div class="hb"><div class="hl"><span>Search page with an AI summary</span><b data-count="8" data-suffix="%">8%</b></div><div class="tr2 dim"><i style="--w:40%"></i></div></div>
+          <p class="note2">Share of visits that clicked a regular result link. Bar scale: 0&ndash;20%.</p>
+        </div>
+        <div class="mini"><div><b>1%</b>clicked a link inside the AI summary</div><div><b>26% vs 16%</b>ended their session after the search</div></div>
+        <p class="take"><strong>Our take:</strong> being clear, sourced, and easy to cite now matters alongside ranking.</p>
+        <p class="src">Pew Research Center analysis of 900 U.S. adults&rsquo; Google browsing in March 2025 (68,879 searches). Google has disputed the study&rsquo;s methodology. Source: <a href="https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/" rel="noopener">Pew Research</a>.</p>
+      </article>
+
+      <article class="dcard fade">
+        <h3>Speed is conversion work, not polish</h3>
+        <div class="big"><em>+<span data-count="8.4" data-dec="1" data-suffix="%">8.4%</span></em></div>
+        <div>
+          <div class="hb"><div class="hl"><span>Retail conversions</span><b data-count="8.4" data-dec="1" data-prefix="+" data-suffix="%">+8.4%</b></div><div class="tr2"><i style="--w:33.6%"></i></div></div>
+          <div class="hb"><div class="hl"><span>Travel conversions</span><b data-count="10.1" data-dec="1" data-prefix="+" data-suffix="%">+10.1%</b></div><div class="tr2"><i style="--w:40.4%"></i></div></div>
+          <div class="hb"><div class="hl"><span>Retail order value</span><b data-count="9.2" data-dec="1" data-prefix="+" data-suffix="%">+9.2%</b></div><div class="tr2"><i style="--w:36.8%"></i></div></div>
+          <div class="hb"><div class="hl"><span>Lead-gen form progression</span><b data-count="21.6" data-dec="1" data-prefix="+" data-suffix="%">+21.6%</b></div><div class="tr2"><i style="--w:86.4%"></i></div></div>
+          <p class="note2">Change after a 0.1 second mobile speed improvement. Bar scale: 0&ndash;25%.</p>
+        </div>
+        <p class="take"><strong>Our take:</strong> we audit speed and clarity together, because both shape whether a visitor becomes a lead.</p>
+        <p class="src">Deloitte study commissioned by Google, 37 brands and 30M+ sessions, data from late 2019; it shows correlation across the sites studied. Source: <a href="https://web.dev/case-studies/milliseconds-make-millions" rel="noopener">web.dev: Milliseconds Make Millions</a>.</p>
+      </article>
+
+    </div>
+    <div style="margin-top:28px;text-align:center"><button class="btn btn-primary" data-audit>See how your site measures up</button></div>
+  </div>
+</section>
+
+<section class="sec" id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head fade"><div class="eyebrow">Services</div><h2>Three ways we grow your website</h2></div>
+    <div class="grid3">
+      <button class="card fade" data-audit data-goal="traffic">
+        <span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>
+        <h3>Search &amp; AI Visibility (SEO/GEO)</h3>
+        <p>Research-first SEO and generative engine optimization, so you are found in search results and in AI answers.</p>
+        <span class="more">Audit my visibility &rarr;</span></button>
+      <button class="card fade" data-audit data-goal="content">
+        <span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Human-Verified Content</h3>
+        <p>Articles and pages written by specialists, fact-checked against primary sources, and reviewed before they go live.</p>
+        <span class="more">Audit my content &rarr;</span></button>
+      <button class="card fade" data-audit data-goal="rebuild">
+        <span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></span>
+        <h3>Conversion Web Builds</h3>
+        <p>Fast, clear, well-structured websites designed to turn visitors into enquiries, bookings, and customers.</p>
+        <span class="more">Audit my website &rarr;</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="founder fade">
+      <div class="portrait" role="img" aria-label="Portrait of Norine Kim Dowing">
+        <div><!-- Replace the span with: <img src="assets/norine.jpg" alt="Norine Kim Dowing"> -->
+          <span>NK</span></div></div>
+      <div>
+        <div class="eyebrow">Founder accountability</div>
+        <blockquote>&ldquo;You should always know who is behind your content and what it is based on. I research first, verify every claim, and explain the work in plain language.&rdquo;</blockquote>
+        <div class="who">Norine Kim Dowing<small>Founder &amp; CEO, NKD Digital Solutions</small></div>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Semrush Certified</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Direct Strategist Access</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head fade"><div class="eyebrow">Process</div><h2>How we work, in three steps</h2></div>
+    <div class="steps">
+      <div class="step fade"><span class="n">01</span><div><h3>Manual Site Review</h3>
+        <p>We audit your site by hand and record a personal video walkthrough of what is holding it back.</p></div></div>
+      <div class="step fade"><span class="n">02</span><div><h3>Written Roadmap</h3>
+        <p>A prioritized, written plan with clear next steps, owners, and expected impact.</p>
+        <span class="price">From $499/mo</span></div></div>
+      <div class="step fade"><span class="n">03</span><div><h3>Execution &amp; Plain-Language Reporting</h3>
+        <p>We do the work and report back in plain language, with no vanity metrics.</p></div></div>
+    </div>
+    <div style="margin-top:28px"><button class="btn btn-primary" data-audit>Start with a free audit</button></div>
+  </div>
+</section>
+
+<section class="sec lab" id="tools" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head fade"><div class="eyebrow">Free Growth Lab</div><h2>Free tools you can use today</h2>
+      <p>Practical resources from the NKD team. No sign-up required.</p></div>
+    <div class="grid3">
+      <a class="card fade" href="/tools/visibility-checklist"><span class="tag">CHECKLIST</span><h3>Website Visibility Checklist</h3>
+        <p>Check whether search engines and AI assistants can find, read, and trust your site.</p><span class="more">Open the checklist &rarr;</span></a>
+      <a class="card fade" href="/tools/ai-prompt-builder"><span class="tag">TOOL</span><h3>AI Prompt Builder</h3>
+        <p>Build clear, structured prompts for faster and more reliable AI-assisted work.</p><span class="more">Build a prompt &rarr;</span></a>
+      <a class="card fade" href="/finance/"><span class="tag">SEPARATE RESOURCE HUB</span><h3>Finance &amp; Trading Calculators</h3>
+        <p>Educational calculators and guides, kept in their own hub away from our agency services.</p><span class="more">Visit the Finance Hub &rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap"><div class="banner fade">
+    <h2>Stop guessing why your website isn&rsquo;t converting</h2>
+    <p>Get a personal video walkthrough of your site, with clear fixes in plain language.</p>
+    <button class="btn btn-primary" data-audit>Request My Free Video Audit</button>
+  </div></div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 23V9h3l10 10V9h3v14h-3L11 13v10z" fill="var(--card)"/></svg><span>NKD Digital Solutions</span></a>
+        <p style="margin-top:12px;max-width:320px">Research-first SEO, human-verified content, and web architecture.</p></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Search &amp; AI Visibility</a></li><li><a href="#services">Human-Verified Content</a></li><li><a href="#services">Conversion Web Builds</a></li></ul></div>
+      <div><h4>Resources</h4><ul><li><a href="/tools/visibility-checklist">Visibility Checklist</a></li><li><a href="/tools/ai-prompt-builder">AI Prompt Builder</a></li><li><a href="/finance/">Finance Hub</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#about">About</a></li><li><a href="#process">Process</a></li><li><button class="btn btn-outline btn-sm" data-audit style="margin:6px 0 14px">Free Video Audit</button></li></ul>
+        <label for="lang" style="font-size:14px">Language</label>
+        <select id="lang" aria-label="Language"><option value="en" selected>English</option><option value="fil" disabled>Filipino (coming soon)</option></select></div>
+    </div>
+    <div class="fine"><span>&copy; <span id="yr">2026</span> NKD Digital Solutions. All rights reserved.</span>
+      <span>Educational resources are not financial advice.</span></div>
+  </div>
+</footer>
+
+<dialog id="audit" aria-labelledby="auditTitle">
+  <div class="dlg">
+    <button class="x" id="closeAudit" aria-label="Close">&times;</button>
+    <div id="auditForm">
+      <h2 id="auditTitle">Request your free video audit</h2>
+      <p>Tell us where to look. We will send a personal video review of your website.</p>
+      <form id="f" novalidate>
+        <div class="hp" aria-hidden="true"><label>Leave blank<input type="text" id="company" tabindex="-1" autocomplete="off"></label></div>
+        <div class="field"><label for="url">Website URL</label><input id="url" name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourwebsite.com"><div class="err" id="e-url"></div></div>
+        <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name"><div class="err" id="e-name"></div></div>
+        <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email"><div class="err" id="e-email"></div></div>
+        <div class="field"><label for="goal">Primary goal</label>
+          <select class="f" id="goal" name="goal"><option value="">Choose one</option>
+            <option value="traffic">Get more organic traffic</option><option value="conversion">Convert more visitors</option>
+            <option value="content">Fact-check and improve my content</option><option value="rebuild">Rebuild my website</option>
+            <option value="unsure">Not sure yet</option></select><div class="err" id="e-goal"></div></div>
+        <button class="btn btn-primary" type="submit" id="submitBtn">Request My Free Video Audit</button>
+      </form>
+    </div>
+    <div class="ok" id="auditOk" hidden>
+      <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+      <h2 style="margin-bottom:10px">Request received</h2>
+      <p id="okMsg">Thank you. We will review your website and be in touch by email.</p>
+      <button class="btn btn-outline" type="button" id="okClose">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+"use strict";
+/* ===== CONFIG ===== */
+var FORM_ENDPOINT = "";                       /* e.g. "https://formspree.io/f/xxxxxxx" */
+var CONTACT_EMAIL = "hello@nkddigitalsolutions.com"; /* used if no endpoint is set */
+/* ================== */
+var $=function(s,r){return (r||document).querySelector(s)};
+var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var root=document.documentElement;
+
+/* Theme */
+function setTheme(t,save){root.setAttribute("data-theme",t);
+  $$("[role=switch]").forEach(function(b){b.setAttribute("aria-checked",String(t==="dark"))});
+  if(save){try{localStorage.setItem("nkd-theme",t)}catch(e){}}}
+setTheme(root.getAttribute("data-theme"),false);
+$$("[role=switch]").forEach(function(b){b.addEventListener("click",function(){
+  setTheme(root.getAttribute("data-theme")==="dark"?"light":"dark",true)})});
+
+/* Mobile drawer */
+var drawer=$("#drawer"),scrim=$("#scrim"),burger=$("#burger");
+function drawerOpen(o){drawer.classList.toggle("open",o);scrim.classList.toggle("open",o);
+  burger.setAttribute("aria-expanded",String(o));document.body.style.overflow=o?"hidden":"";
+  if(o){$("#closeDrawer").focus()}else if(document.activeElement&&drawer.contains(document.activeElement)){burger.focus()}}
+burger.addEventListener("click",function(){drawerOpen(true)});
+$("#closeDrawer").addEventListener("click",function(){drawerOpen(false)});
+scrim.addEventListener("click",function(){drawerOpen(false)});
+$$("#drawer a.l").forEach(function(a){a.addEventListener("click",function(){drawerOpen(false)})});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&drawer.classList.contains("open"))drawerOpen(false)});
+window.matchMedia("(min-width:900px)").addEventListener("change",function(m){if(m.matches)drawerOpen(false)});
+
+/* Audit modal */
+var dlg=$("#audit"),form=$("#f");
+function openAudit(goal){
+  drawerOpen(false);
+  $("#auditForm").hidden=false;$("#auditOk").hidden=true;
+  if(goal)$("#goal").value=goal;
+  if(typeof dlg.showModal==="function"){if(!dlg.open)dlg.showModal()}else{dlg.setAttribute("open","")}
+  setTimeout(function(){$("#url").focus()},50)}
+$$("[data-audit]").forEach(function(b){b.addEventListener("click",function(){openAudit(b.getAttribute("data-goal"))})});
+function closeAudit(){if(dlg.close)dlg.close();else dlg.removeAttribute("open")}
+$("#closeAudit").addEventListener("click",closeAudit);$("#okClose").addEventListener("click",closeAudit);
+dlg.addEventListener("click",function(e){if(e.target===dlg)closeAudit()});
+
+function bad(id,msg){var f=$("#"+id).closest(".field");f.classList.add("bad");$("#e-"+id).textContent=msg;$("#"+id).setAttribute("aria-invalid","true")}
+function good(id){var f=$("#"+id).closest(".field");f.classList.remove("bad");$("#e-"+id).textContent="";$("#"+id).removeAttribute("aria-invalid")}
+function check(id){
+  var v=$("#"+id).value.trim(),ok=true;
+  if(id==="url"){ok=/^(https?:\/\/)?([a-z0-9-]+\.)+[a-z]{2,}(\/\S*)?$/i.test(v);if(!ok)bad(id,"Enter a valid website, like yourwebsite.com.")}
+  if(id==="name"){ok=v.length>=2;if(!ok)bad(id,"Please enter your name.")}
+  if(id==="email"){ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);if(!ok)bad(id,"Enter a valid work email.")}
+  if(id==="goal"){ok=v!=="";if(!ok)bad(id,"Choose your main goal.")}
+  if(ok)good(id);return ok}
+["url","name","email","goal"].forEach(function(id){
+  $("#"+id).addEventListener("blur",function(){if($("#"+id).value||$("#"+id).closest(".field").classList.contains("bad"))check(id)});
+  $("#"+id).addEventListener("input",function(){if($("#"+id).closest(".field").classList.contains("bad"))check(id)})});
+
+form.addEventListener("submit",function(e){
+  e.preventDefault();
+  if($("#company").value)return; /* honeypot */
+  var results=["url","name","email","goal"].map(check);
+  if(results.indexOf(false)!==-1){var first=$(".field.bad input, .field.bad select");if(first)first.focus();return}
+  var goalText=$("#goal").options[$("#goal").selectedIndex].text;
+  var data={url:$("#url").value.trim(),name:$("#name").value.trim(),email:$("#email").value.trim(),goal:goalText};
+  var btn=$("#submitBtn");btn.disabled=true;btn.textContent="Sending…";
+  function done(msg){$("#auditForm").hidden=true;$("#auditOk").hidden=false;if(msg)$("#okMsg").textContent=msg;
+    btn.disabled=false;btn.textContent="Request My Free Video Audit";form.reset();$("#okClose").focus()}
+  if(FORM_ENDPOINT){
+    fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(data)})
+      .then(function(r){if(!r.ok)throw 0;done("Thank you, "+data.name.split(" ")[0]+". We will review "+data.url+" and email you at "+data.email+".")})
+      .catch(function(){btn.disabled=false;btn.textContent="Request My Free Video Audit";
+        bad("email","Something went wrong. Please try again, or email "+CONTACT_EMAIL+".")});
+  }else{
+    var body="Website: "+data.url+"\nName: "+data.name+"\nEmail: "+data.email+"\nGoal: "+data.goal;
+    window.location.href="mailto:"+CONTACT_EMAIL+"?subject="+encodeURIComponent("Free Video Audit request")+"&body="+encodeURIComponent(body);
+    done("Your email app should open with your request ready to send. If it does not, email "+CONTACT_EMAIL+".")}
+});
+
+/* Reveal on scroll */
+var els=$$(".fade");
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add("reveal");io.unobserve(en.target)}})},{threshold:.15});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add("reveal")})}
+/* Ticker */
+var track=$("#track"),tick=$("#ticker"),tp=$("#tpause");
+if(track){Array.prototype.slice.call(track.children).forEach(function(n){var c=n.cloneNode(true);c.setAttribute("aria-hidden","true");track.appendChild(c)})}
+if(tp){tp.addEventListener("click",function(){var p=tick.classList.toggle("paused");tp.setAttribute("aria-pressed",String(p));tp.textContent=p?"Play":"Pause"})}
+
+/* Count-up numbers */
+var still=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function fmtN(el,v){var d=+(el.getAttribute("data-dec")||0);el.textContent=(el.getAttribute("data-prefix")||"")+v.toFixed(d)+(el.getAttribute("data-suffix")||"")}
+function countUp(el){var end=+el.getAttribute("data-count"),t0=null,dur=1400;
+  function step(t){if(!t0)t0=t;var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);fmtN(el,end*e);if(k<1)requestAnimationFrame(step);else fmtN(el,end)}
+  requestAnimationFrame(step)}
+if("IntersectionObserver" in window&&!still){
+  var co=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){$$("[data-count]",en.target).forEach(countUp);if(en.target.hasAttribute&&en.target.hasAttribute("data-count"))countUp(en.target);co.unobserve(en.target)}})},{threshold:.3});
+  $$(".dcard,.stat").forEach(function(c){$$("[data-count]",c).forEach(function(n){fmtN(n,0)});co.observe(c)});
+}
+$("#yr").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
