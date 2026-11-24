@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NKD Digital Solutions PH | AI &amp; SEO Growth for Brands That Need to Be Trusted</title>
-<meta name="description" content="AI & SEO, leverage and digital asset literacy. 50+ global clients, end-to-end web development and operations. Research-first, human-edited.">
+<title>NKD Digital Solutions PH | Human-Verified SEO, Content and Web Architecture</title>
+<meta name="description" content="AI writes fast. Humans make it rank and convert. Research-first SEO, human-verified content and end-to-end web architecture for B2B brands.">
 <link rel="canonical" href="https://nkddigitalsolutions.com/">
 <meta property="og:image" content="https://nkddigitalsolutions.com/logo.png">
 <meta name="theme-color" content="#07070d">
+<script>try{var t=localStorage.getItem('nkd-theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="stylesheet" href="/nkd-home.css">
 </head>
 <body>
@@ -15,137 +16,182 @@
 
 <header class="nav" id="nav">
   <div class="wrap nav-in">
-    <a href="/" class="brand" aria-label="NKD Digital Solutions PH home"><img src="/logo.png" alt="NKD Digital Solutions PH" width="44" height="44"><span>NKD Digital Solutions PH</span></a>
-    <nav aria-label="Main">
-      <a href="/services/">Services</a><a href="/tools/">Free tools</a><a href="/learn/">Learn</a><a href="/pricing/">Plans</a><a href="/about/">About</a>
+    <a href="/" class="brand" aria-label="NKD Digital Solutions PH home"><img src="/logo.png" alt="" width="40" height="40"><span>NKD Digital Solutions</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#services">Services</a><a href="#process">Process</a><a href="#growth-lab">Free Tools</a><a href="/finance/">Finance Hub</a><a href="/about/">About</a>
     </nav>
-    <a class="btn sm" href="/tools/#audit">Free audit</a>
+    <div class="nav-r">
+      <button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark mode"><span class="sun">☀</span><span class="moon">☾</span></button>
+      <button class="btn sm hide-m" type="button" data-open-audit>Get Free Video Audit</button>
+      <button class="icon-btn burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
+    </div>
   </div>
 </header>
 
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#services">Services</a><a href="#process">Process</a><a href="#growth-lab">Free Tools</a><a href="/finance/">Finance Hub</a><a href="/about/">About</a>
+  </nav>
+  <div class="drawer-foot">
+    <button class="btn block theme-toggle-text" type="button">Switch light / dark</button>
+    <button class="btn block solid" type="button" data-open-audit>Get Free Video Audit</button>
+  </div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
 <main id="main">
 
-<!-- 1. HERO: one promise, one action -->
+<!-- HERO -->
 <section class="hero">
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap hero-grid">
-    <div>
-      <p class="pill">AI &amp; SEO <i>|</i> Leverage <i>|</i> Digital Asset Literacy</p>
-      <h1>Turn search and AI visibility into <span class="rot" aria-live="polite"><b class="on">qualified leads.</b><b>booked calls.</b><b>lasting authority.</b></span></h1>
-      <p class="lead">Your customers ask Google and AI before they call you. We make your brand the answer they trust, with research-first strategy, human-edited content and websites built to convert.</p>
+    <div class="hero-copy">
+      <p class="badge">Research-first SEO • Human-verified content • Web architecture</p>
+      <h1>AI writes fast. Humans make it <em>rank and convert.</em></h1>
+      <p class="lead">Most agencies flood your site with unverified AI content that search engines filter out and buyers distrust. We combine data-backed SEO, strict fact-checking, and conversion-focused web design to turn your website into a dependable growth asset.</p>
       <div class="btns">
-        <a class="btn" href="/tools/#audit">Get my free audit</a>
-        <a class="btn ghost" href="/pricing/">See plans from USD 499/month</a>
+        <button class="btn solid" type="button" data-open-audit>Get a Custom Video Audit</button>
+        <a class="btn ghost" href="#services">Explore Services</a>
       </div>
-      <ul class="ticks"><li>Free, about one minute</li><li>No credit card</li><li>Reviewed by a named person</li></ul>
+      <p class="tagline">AI &amp; SEO <i>|</i> Leverage <i>|</i> Digital Asset Literacy</p>
     </div>
-    <figure class="founder">
-      <img src="/assets/founder.jpg" alt="Norine Kim Dowing, founder of NKD Digital Solutions PH" onerror="this.parentNode.classList.add('nophoto')">
-      <figcaption><strong>Norine Kim Dowing</strong>Founder &amp; Lead SEO Strategist<br><a href="/about/">Meet the founder</a></figcaption>
-    </figure>
+    <div class="hero-viz">
+      <canvas id="orb" aria-hidden="true"></canvas>
+      <div class="score" role="img" aria-label="Example Human-Verified SEO Audit scorecard">
+        <div class="score-h"><b>Human-Verified SEO Audit</b><span>Example</span></div>
+        <ul>
+          <li><i>✓</i><span>Technical Health</span><b>98%</b></li>
+          <li><i>✓</i><span>Fact-Checked Citations</span><b>Verified</b></li>
+          <li><i>✓</i><span>Conversion Clarity</span><b>High</b></li>
+        </ul>
+        <small>Illustrative values, not client results.</small>
+      </div>
+    </div>
   </div>
-  <div class="wrap stats">
-    <div><b data-n="50" data-s="+">0</b><span>global clients</span></div>
-    <div><b data-n="4" data-s="+">0</b><span>years in SEO and content</span></div>
+  <div class="wrap hero-stats">
+    <div><b data-n="50" data-s="+">0</b><span>Global clients, E2E web development &amp; ops</span></div>
+    <div><b data-n="4" data-s="+">0</b><span>Years in SEO and content</span></div>
     <div><b data-n="3" data-s="">0</b><span>Semrush certificates</span></div>
-    <div><b>E2E</b><span>web development &amp; ops</span></div>
   </div>
 </section>
 
-<!-- 2. PROBLEM -->
-<section class="sec">
+<!-- TRUST BAR -->
+<section class="trust">
   <div class="wrap">
-    <h2 class="rv">Good companies lose customers they never knew they had.</h2>
-    <p class="sub rv">Most established brands do not have a traffic problem. They have a trust and clarity problem across search, AI answers and their own website.</p>
-    <div class="cards three">
-      <article class="card rv"><h3>You are hard to find</h3><p>Buyers research on search and AI assistants. If your pages are thin or unstructured, competitors get recommended instead.</p></article>
-      <article class="card rv"><h3>You are hard to understand</h3><p>Visitors land, cannot tell what you do or what to do next, and leave. Traffic without a clear path is wasted spend.</p></article>
-      <article class="card rv"><h3>Generic AI content costs trust</h3><p>Unchecked AI pages rank briefly and then break. In finance and trading, one wrong claim costs credibility.</p></article>
+    <p class="trust-l">Experience supporting 50+ brands across finance, SaaS, e-commerce and health</p>
+    <div class="logos" aria-label="Brands">
+      <span>Blueberry Markets</span><span>FXPrimus</span><span>Avalon King</span><span>Aura Health</span><span>123Presets</span>
     </div>
   </div>
 </section>
 
-<!-- 3. SYSTEM -->
-<section class="sec alt">
+<!-- PROBLEM vs SOLUTION -->
+<section class="sec" id="why">
   <div class="wrap">
-    <h2 class="rv">One growth system, not four disconnected services.</h2>
-    <p class="sub rv">Every step feeds the next: what we find shapes what we publish, what we publish shapes your site, and your reports shape the next month.</p>
-    <ol class="flow">
-      <li class="rv"><span>Audit</span><p>Score your site and find the biggest leaks. Free.</p><a href="/tools/#audit">Run the audit</a></li>
-      <li class="rv"><span>Plan</span><p>Priorities, scope and price in writing before work starts.</p><a href="/pricing/">View plans</a></li>
-      <li class="rv"><span>Build</span><p>SEO, content and website work by named people.</p><a href="/services/">See services</a></li>
-      <li class="rv"><span>Report</span><p>Plain-language results and what we decide next.</p><a href="/about/">How we work</a></li>
+    <div class="head"><h2>Why “Good Enough” Content No Longer Works</h2>
+    <p>According to McKinsey, 78% of organizations now use AI in at least one business function. When everyone can publish at the same speed, speed stops being an advantage. Trust, accuracy and clarity decide who gets found and who gets chosen.</p></div>
+    <div class="compare">
+      <article class="col bad"><h3>Typical AI-Spam Agencies</h3>
+        <ul><li>Mass-produced pages with no fact-check</li><li>Keywords stuffed, buyer intent ignored</li><li>No named person accountable</li><li>Vanity traffic reports</li><li>Website left as a digital brochure</li></ul></article>
+      <article class="col good"><h3>NKD Digital Solutions</h3>
+        <ul><li>Every claim sourced and checked by a person</li><li>Search intent mapped to real buyer questions</li><li>Direct access to the founder-strategist</li><li>Plain-language reports on what changed</li><li>Site built as a conversion asset</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec alt" id="services">
+  <div class="wrap">
+    <div class="head"><h2>One system for search, content and conversion</h2><p>Three services that feed each other, so visibility turns into enquiries.</p></div>
+    <div class="grid3">
+      <a class="card" href="/seo/"><span class="ic">◎</span><h3>Search &amp; AI Visibility (SEO/GEO)</h3><p>Technical SEO, keyword architecture and structure that search engines and AI assistants can read and cite.</p><em>Explore →</em></a>
+      <a class="card" href="/content/"><span class="ic">✎</span><h3>Human-Verified Content</h3><p>Journalism-grade articles with sources, expert review and a person who signs off on every page.</p><em>Explore →</em></a>
+      <a class="card" href="/website/"><span class="ic">▣</span><h3>Conversion Web Builds</h3><p>End-to-end web architecture on WordPress, Webflow and Shopify, built to guide visitors to act.</p><em>Explore →</em></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="sec" id="founder">
+  <div class="wrap founder">
+    <div class="ring"><span class="init">NK</span><img src="/assets/founder.jpg" alt="Norine Kim Dowing, founder of NKD Digital Solutions PH" onerror="this.remove()"></div>
+    <div>
+      <h2>A named person is accountable for your results</h2>
+      <blockquote><p>I will always show you where a claim comes from and what we changed. Research comes first, and nothing is published until a person has checked it.</p><cite>Norine Kim Dowing, Founder &amp; Lead SEO Strategist</cite></blockquote>
+      <div class="chips"><span>Semrush Certified</span><span>Direct Strategist Access</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec alt" id="process">
+  <div class="wrap">
+    <div class="head"><h2>How it works</h2><p>A clear path from first look to monthly results.</p></div>
+    <ol class="steps">
+      <li><span class="num">01</span><h3>Manual Site Review</h3><p>We review your site by hand and send a short video of what is holding it back.</p></li>
+      <li><span class="num">02</span><h3>Written Roadmap — From $499/mo</h3><p>Priorities, scope and price in writing before any work begins.</p></li>
+      <li><span class="num">03</span><h3>Execution &amp; Plain-Language Reporting</h3><p>Named people do the work. You get a clear monthly report on what changed.</p></li>
     </ol>
+    <div class="center"><button class="btn solid" type="button" data-open-audit>Start with step 01</button></div>
   </div>
 </section>
 
-<!-- 4. SERVICES -->
-<section class="sec">
+<!-- GROWTH LAB -->
+<section class="sec" id="growth-lab">
   <div class="wrap">
-    <h2 class="rv">What we run for you.</h2>
-    <div class="cards four">
-      <a class="card link rv" href="/seo/"><h3>SEO &amp; AI search</h3><p>Become the source search engines and AI assistants cite.</p><span>Explore →</span></a>
-      <a class="card link rv" href="/content/"><h3>Content growth</h3><p>Journalism-grade articles with sources and expert review.</p><span>Explore →</span></a>
-      <a class="card link rv" href="/website/"><h3>Website growth</h3><p>Conversion architecture on WordPress, Webflow, Shopify and more.</p><span>Explore →</span></a>
-      <a class="card link rv" href="/finance/"><h3>Finance &amp; trading</h3><p>Compliance-aware search content where accuracy comes first.</p><span>Explore →</span></a>
+    <div class="head"><h2>Free Growth Lab</h2><p>Practical tools you can use today, no sign-up needed.</p></div>
+    <div class="grid3">
+      <a class="card" href="/tools/visibility-checklist"><span class="ic">☑</span><h3>Website Visibility Checklist</h3><p>Check the basics that decide whether you can be found.</p><em>Open checklist →</em></a>
+      <a class="card" href="/tools/ai-prompt-builder"><span class="ic">✦</span><h3>AI Prompt Builder</h3><p>Write clearer prompts so AI drafts start closer to usable.</p><em>Open builder →</em></a>
+      <a class="card" href="/finance/"><span class="ic">∑</span><h3>Finance &amp; Trading Calculators</h3><p>A separate resource hub for traders and finance teams.</p><em>Visit the Finance Hub →</em></a>
     </div>
   </div>
 </section>
 
-<!-- 5. PROOF -->
-<section class="sec alt">
-  <div class="wrap">
-    <h2 class="rv">Trusted across finance, SaaS, e-commerce and health.</h2>
-    <div class="marquee" aria-label="Recent and notable brands">
-      <div class="track">
-        <span>Blueberry Markets</span><span>FXPrimus</span><span>TIO Markets</span><span>Avalon King</span><span>Case Monkey</span><span>Forma</span><span>Aura Health</span><span>Blue Crocus Solutions</span><span>Nakada Design</span><span>Ok Omni</span>
-        <span aria-hidden="true">Blueberry Markets</span><span aria-hidden="true">FXPrimus</span><span aria-hidden="true">TIO Markets</span><span aria-hidden="true">Avalon King</span><span aria-hidden="true">Case Monkey</span><span aria-hidden="true">Forma</span><span aria-hidden="true">Aura Health</span><span aria-hidden="true">Blue Crocus Solutions</span><span aria-hidden="true">Nakada Design</span><span aria-hidden="true">Ok Omni</span>
-      </div>
-    </div>
-    <blockquote class="rv"><p>Excellent and Fantastic Work Norine. You are a great addition to the team.</p><cite>Tyler Dixon</cite></blockquote>
-  </div>
-</section>
-
-<!-- 6. OBJECTIONS -->
-<section class="sec">
-  <div class="wrap narrow">
-    <h2 class="rv">Fair questions before you book.</h2>
-    <details class="rv" open><summary>Can't we just use AI for this?</summary><p>You can, and we do, to move faster. AI cannot verify your facts, know your buyers or take responsibility when a page is wrong. We research, cite, and have a person sign off on every page.</p></details>
-    <details class="rv"><summary>What does it cost?</summary><p>Plans start at USD 499/month. Scope and price are agreed in writing before work begins.</p></details>
-    <details class="rv"><summary>How will I know it is working?</summary><p>You get a plain-language monthly report: what changed, what moved, and what we do next.</p></details>
-    <details class="rv"><summary>Who will actually do the work?</summary><p>Named people, led by the founder. No anonymous handoffs.</p></details>
-  </div>
-</section>
-
-<!-- 7. SOFT ENTRY -->
-<section class="sec alt">
-  <div class="wrap">
-    <h2 class="rv">Not ready to talk? Start with something useful.</h2>
-    <div class="cards three">
-      <a class="card link rv" href="/tools/#audit"><h3>Website audit</h3><p>Five checks, one score, your top fixes.</p><span>Run it →</span></a>
-      <a class="card link rv" href="/learn/#courses"><h3>Free courses</h3><p>AI, SEO and digital asset literacy, at your pace.</p><span>Start learning →</span></a>
-      <a class="card link rv" href="/blog/"><h3>Articles</h3><p>Digital opportunities explained plainly.</p><span>Read →</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 8. FINAL CTA -->
+<!-- FINAL CTA -->
 <section class="sec">
   <div class="wrap">
-    <div class="cta rv">
-      <h2>Ready to be the brand customers trust first?</h2>
-      <p>Start with a free audit, or book a founder-led strategy call.</p>
-      <div class="btns"><a class="btn inv" href="/tools/#audit">Get my free audit</a><a class="btn ghost inv" href="/contact/">Book a strategy call with Norine</a></div>
+    <div class="final">
+      <h2>Stop guessing why your website isn’t converting</h2>
+      <p>Get a short video review of your site from a person, with the top fixes in plain language.</p>
+      <button class="btn solid" type="button" data-open-audit>Request My Free Video Audit</button>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p><strong>NKD Digital Solutions PH</strong><br>AI &amp; SEO | Leverage | Digital Asset Literacy<br>🌐 50+ Global Clients E2E Web Development &amp; Ops.</p>
-    <p><a href="/services/">Services</a><a href="/pricing/">Plans</a><a href="/tools/">Tools</a><a href="/learn/">Learn</a><a href="/about/">About</a><a href="https://www.instagram.com/nkdds.media">@nkdds.media</a></p>
+  <div class="wrap foot-grid">
+    <div><a href="/" class="brand"><img src="/logo.png" alt="" width="36" height="36"><span>NKD Digital Solutions</span></a>
+      <p>AI &amp; SEO | Leverage | Digital Asset Literacy<br>🌐 50+ Global Clients E2E Web Development &amp; Ops.</p></div>
+    <div><h4>Services</h4><a href="/seo/">SEO &amp; AI Visibility</a><a href="/content/">Human-Verified Content</a><a href="/website/">Web Builds</a><a href="/pricing/">Plans</a></div>
+    <div><h4>Resources</h4><a href="/tools/visibility-checklist">Visibility Checklist</a><a href="/tools/ai-prompt-builder">AI Prompt Builder</a><a href="/finance/">Finance Hub</a><a href="/blog/">Articles</a></div>
+    <div><h4>Company</h4><a href="/about/">About</a><a href="https://www.instagram.com/nkdds.media">Instagram</a>
+      <label class="lang">Language<select id="lang" aria-label="Language"><option value="en">English</option><option value="tl">Filipino</option><option value="es">Español</option><option value="id">Bahasa Indonesia</option></select></label></div>
   </div>
+  <div class="wrap legal">© <span id="yr"></span> NKD Digital Solutions PH</div>
 </footer>
+
+<dialog id="audit" aria-labelledby="audit-t">
+  <form id="audit-form" novalidate>
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <h3 id="audit-t">Request My Free Video Audit</h3>
+    <p class="muted">Tell us where to look. A person will review your site and send a short video.</p>
+    <label>Website URL<input name="url" type="text" inputmode="url" autocomplete="url" placeholder="yourcompany.com" required><small class="err"></small></label>
+    <label>Name<input name="name" type="text" autocomplete="name" required><small class="err"></small></label>
+    <label>Work Email<input name="email" type="email" autocomplete="email" required><small class="err"></small></label>
+    <label>Primary Goal<select name="goal" required><option value="">Choose one</option><option>More organic traffic</option><option>More qualified leads</option><option>Fix content quality and trust</option><option>Rebuild or improve my website</option><option>Finance or trading SEO</option></select><small class="err"></small></label>
+    <button class="btn solid block" type="submit">Request My Free Video Audit</button>
+    <p class="muted fine">We use your details only to prepare your audit.</p>
+  </form>
+  <div id="audit-ok" hidden>
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <div class="tick">✓</div><h3>Request received</h3>
+    <p class="muted">Thank you, <b id="ok-name"></b>. We will review <b id="ok-url"></b> and send your video audit to <b id="ok-email"></b>.</p>
+    <button class="btn ghost block" type="button" data-close>Back to site</button>
+  </div>
+</dialog>
+
 <script src="/nkd-home.js" defer></script>
 </body>
 </html>
