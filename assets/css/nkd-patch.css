@@ -1,0 +1,21 @@
+/* NKD patch (load after site.css): replaces every orange accent with the logo green, plus the homepage "Explore NKD" section. */
+:root,html[data-theme=dark]{--or:#19F0CF;--ac:#19F0CF}
+html[data-theme=light]{--or:#078573;--ac:#078573}
+.nv,.hero{--or:#19F0CF}:root{--gr:var(--or)}
+.ann a,.nv a{color:#19F0CF}.ft a{color:#cfe3ea}.ft a:hover{color:#19F0CF}
+.card:hover{border-color:#19f0cf88;box-shadow:0 18px 44px #19f0cf26}
+.fw b{background:linear-gradient(135deg,#8dfbe8,#19F0CF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num,.pill{background:linear-gradient(135deg,#7dfbe6,#19F0CF);color:#06201c}
+.gx{background:linear-gradient(90deg,#fff 0%,#b9ccff 38%,#8ff5e6 70%,#19F0CF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-theme=light] .sec:not(.nv) .eb{color:#078573}
+.gwc{display:flex;flex-direction:column;gap:14px}.gwc .btn{align-self:flex-start;margin-top:auto}.gwc h3,.gwc p{margin:0}
+.gv-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;counter-reset:s}
+.gv-steps li{counter-increment:s;border:1px solid rgba(127,140,160,.35);border-radius:10px;padding:8px 10px;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(127,140,160,.1)}
+.gv-steps li:before{content:counter(s,decimal-leading-zero);display:block;color:var(--gr);font-weight:700}
+.gv-th{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.gv-th img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top left;border-radius:10px;border:1px solid rgba(127,140,160,.35)}
+.gv-cap{font-size:.78rem;opacity:.75}
+.gv-l{list-style:none;margin:0;padding:0}.gv-l li{padding:10px 0;border-top:1px solid rgba(127,140,160,.3);display:flex;gap:10px}.gv-l li:before{content:"→";color:var(--gr)}
+.gv-ch{display:flex;flex-wrap:wrap;gap:8px}.gv-ch span{border:1px solid rgba(127,140,160,.4);border-radius:999px;padding:5px 14px;font-size:.85rem}
+.gv-dr{border:1px solid rgba(127,140,160,.35);border-radius:12px;padding:12px 14px;background:rgba(127,140,160,.1);font-size:.88rem}.gv-dr b{color:var(--gr);display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:2px}
+.gw-cta{margin-top:26px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;border:1px solid rgba(127,140,160,.35);border-radius:18px;padding:22px 26px}.gw-cta p{margin:0;font-weight:600;max-width:640px}
+@media(max-width:560px){.gv-steps,.gv-th{grid-template-columns:repeat(2,1fr)}}
