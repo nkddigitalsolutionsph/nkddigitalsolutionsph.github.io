@@ -143,14 +143,14 @@ html[data-theme=light] .sec:not(.nv) .btn.o{
   --tx:var(--nkd-navy);
   --mu:#5C6273;
   --sf:#FFFCF6;
-  --ln:#D8D0C3;
+  --ln:var(--nkd-sand);
   --ac:var(--nkd-cobalt);
   --or:var(--nkd-cobalt);
   --g:linear-gradient(115deg,#2457FF 0%,#527BFF 55%,#8CA8FF 100%);
 }
 html[data-theme=light]{
   --bg:var(--nkd-cream);--tx:var(--nkd-navy);--mu:#5C6273;
-  --sf:#FFFCF6;--ln:#D8D0C3;--ac:var(--nkd-cobalt);--or:var(--nkd-cobalt);
+  --sf:#FFFCF6;--ln:var(--nkd-sand);--ac:var(--nkd-cobalt);--or:var(--nkd-cobalt);
 }
 html[data-theme=dark]{
   --bg:#0D1738;--tx:#F8F1E4;--mu:#C4CDE4;
